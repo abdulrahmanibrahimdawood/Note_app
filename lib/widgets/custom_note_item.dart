@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note/models/note_model.dart';
-import 'package:note/widgets/edit_note_view_body.dart';
+import 'package:note/screens/note_edit_view.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.note});
@@ -17,7 +17,9 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteViewBody();
+              return NoteEditView(
+                note: note,
+              );
             },
           ),
         );
